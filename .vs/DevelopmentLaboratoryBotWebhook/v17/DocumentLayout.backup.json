@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
@@ -75,11 +79,24 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-02-18T16:54:05.063Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\appsettings.json*",
-              "RelativeToolTip": "appsettings.json*",
+              "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-18T15:35:48.039Z",
@@ -87,12 +104,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Properties\\launchSettings.json*",
-              "RelativeToolTip": "Properties\\launchSettings.json*",
+              "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2026-02-18T15:35:46.649Z",
@@ -100,7 +117,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "MessageHandler.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\MessageHandler.cs",
               "RelativeDocumentMoniker": "Services\\MessageHandler.cs",
@@ -113,7 +130,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "ButtonHandler.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\ButtonHandler.cs",
               "RelativeDocumentMoniker": "Services\\ButtonHandler.cs",
@@ -126,7 +143,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -139,7 +156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "TelegramController.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Controllers\\TelegramController.cs",
               "RelativeDocumentMoniker": "Controllers\\TelegramController.cs",
