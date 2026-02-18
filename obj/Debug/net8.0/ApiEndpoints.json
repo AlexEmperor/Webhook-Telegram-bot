@@ -1,0 +1,18 @@
+[
+  {
+    "ContainingType": "DevelopmentLaboratoryBotWebhook.Controllers.TelegramController",
+    "Method": "Post",
+    "RelativePath": "api/Telegram",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "update",
+        "Type": "Telegram.Bot.Types.Update",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
