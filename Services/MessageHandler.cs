@@ -185,7 +185,7 @@ namespace DevelopmentLaboratoryBotWebhook
                         chatId: query.Message!.Chat.Id,
                         messageId: query.Message.MessageId,
                         text:
-                        "📞 Контакты:\nТелефон: +7(977)488-90-30\nE-mail: alex04120445@mail.ru\nТелеграм: @YgorGrupStar\nАдрес: 125183, г. Москва, Проспект Черепановых, д. 54\n" +
+                        "📞 Контакты:\nТелефон: +7(977)488-90-30\nE-mail: electriks0comp26@gmail.com\nТелеграм: @YgorGrupStar\nАдрес: 125183, г. Москва, Проспект Черепановых, д. 54\n" +
                         "Контактное лицо: Тарасов Игорь Анатольевич\nВремя работы: пн-пт: 9:00 - 18:00",
                         replyMarkup: ButtonHandler.ReturnKeyboard()
                     );
