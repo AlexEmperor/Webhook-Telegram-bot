@@ -40,29 +40,58 @@ namespace DevelopmentLaboratoryBotWebhook
                         break;
                     case "form_email":
                         var oldForm = formData[chatId];
+
                         formData[chatId] = (oldForm.Name, msg.Text, "");
                         userStates[chatId] = "form_task";
                         await bot.SendMessage(chatId, "Коротко опишите задачу:");
                         break;
                     case "form_task":
-                        var data = formData[chatId];
-                        formData[chatId] = (data.Name, data.Email, msg.Text);
+                        {
+                            var data = formData[chatId];
 
-                        var adminChatId = -5123579887; // сюда свой Telegram ID группы/чата
-                        await bot.SendMessage(adminChatId,
-                            $"Новая заявка:\n\nИмя: {data.Name}\nEmail: {data.Email}\nОписание задачи: {msg.Text}");
+                            // Обновляем данные формы
+                            formData[chatId] = (data.Name, data.Email, msg.Text);
 
-                        // Отправляем пользователю сообщение о завершении
-                        await bot.SendMessage(chatId, "✅ Заявка отправлена! Спасибо!");
+                            // ===== Telegram данные пользователя =====
+                            var telegramId = msg.From!.Id;
+                            var username = msg.From.Username;
+                            var firstName = msg.From.FirstName ?? "";
+                            var lastName = msg.From.LastName ?? "";
 
-                        await bot.SendMessage(chatId,
-                            "Вернуться в меню:",
-                            replyMarkup: ButtonHandler.ReturnKeyboard()
-                        );
+                            var usernameText = username != null ? "@" + username : "не указан";
+                            var profileLink = username != null
+                                ? $"https://t.me/{username}"
+                                : $"tg://user?id={telegramId}";
 
-                        userStates.Remove(chatId);
-                        formData.Remove(chatId);
-                        break;
+                            var adminChatId = -5123579887; // твой ID
+
+                            await bot.SendMessage(
+                                adminChatId,
+                                $"📩 <b>Новая заявка</b>\n\n" +
+                                $"👤 Имя: {data.Name}\n" +
+                                $"📧 Email: {data.Email}\n" +
+                                $"📝 Задача: {msg.Text}\n\n" +
+                                $"📱 Telegram:\n" +
+                                $"Username: {usernameText}\n" +
+                                $"ID: {telegramId}\n" +
+                                $"Профиль: {profileLink}\n\n" +
+                                $"🧾 Telegram имя: {firstName} {lastName}",
+                                parseMode: Telegram.Bot.Types.Enums.ParseMode.Html
+                            );
+
+                            await bot.SendMessage(chatId, "✅ Заявка отправлена! Спасибо!");
+
+                            await bot.SendMessage(
+                                chatId,
+                                "Вернуться в меню:",
+                                replyMarkup: ButtonHandler.ReturnKeyboard()
+                            );
+
+                            userStates.Remove(chatId);
+                            formData.Remove(chatId);
+
+                            break;
+                        }
 
                 }
                 return;
@@ -169,12 +198,12 @@ namespace DevelopmentLaboratoryBotWebhook
                         messageId: query.Message.MessageId,
                         text:
                         "⚙️ Услуги:\n\n" +
-                        "• Разработка ПО под заказ\n" +
-                        "• Создание прототипов устройств\n" +
-                        "• Интеграция оборудования\n" +
-                        "• Консультационные услуги\n" +
-                        "• Поставка готовых изделий\n" +
-                        "• Гарантийное обслуживание\n" +
+                        "• Разработка ПО под заказ\n\n" +
+                        "• Создание прототипов устройств\n\n" +
+                        "• Интеграция оборудования\n\n" +
+                        "• Консультационные услуги\n\n" +
+                        "• Поставка готовых изделий\n\n" +
+                        "• Гарантийное обслуживание\n\n" +
                         "• Сопровождение проектов",
                         replyMarkup: ButtonHandler.ReturnKeyboard()
                     );
@@ -185,7 +214,7 @@ namespace DevelopmentLaboratoryBotWebhook
                         chatId: query.Message!.Chat.Id,
                         messageId: query.Message.MessageId,
                         text:
-                        "📞 Контакты:\nТелефон: +7(977)488-90-30\nE-mail: electriks0comp26@gmail.com\nТелеграм: @YgorGrupStar\nАдрес: 125183, г. Москва, Проспект Черепановых, д. 54\n" +
+                        "📞 Контакты:\nТелефон: +7 (977) 488-90-30\nE-mail: electriks0comp26@gmail.com\nТелеграм: @YgorGrupStar\nАдрес: 125183, г. Москва, Проспект Черепановых, д. 54\n" +
                         "Контактное лицо: Тарасов Игорь Анатольевич\nВремя работы: пн-пт: 9:00 - 18:00",
                         replyMarkup: ButtonHandler.ReturnKeyboard()
                     );
@@ -216,9 +245,9 @@ namespace DevelopmentLaboratoryBotWebhook
                         messageId: query.Message.MessageId,
                         text:
                         "📰 Новости лаборатории:\n\n" +
-                        "1️⃣ Проведена проверка изделия AK SDR в полевых условиях на полигоне в г. Калуга\n" +
-                        "2️⃣ Отладка устройства VVizor.\n" +
-                        "3️⃣ Выпущена очередная партия МЭМС",
+                        "1️⃣ Проведена проверка изделия AK SDR в полевых условиях на полигоне в г. Калуга.\n\n" +
+                        "2️⃣ Отладка устройства VVizor.\n\n" +
+                        "3️⃣ Выпущена очередная партия МЭМС.",
                         replyMarkup: ButtonHandler.ReturnKeyboard()
                     );
                     break;
