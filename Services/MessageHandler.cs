@@ -69,14 +69,15 @@ namespace DevelopmentLaboratoryBotWebhook
                                 adminChatId,
                                 $"📩 <b>Новая заявка</b>\n\n" +
                                 $"👤 Имя: {data.Name}\n" +
+                                $"📝 Описание заявки: {msg.Text}\n\n" +
+                                $"📞 Контакты:\n" +
                                 $"📧 Email: {data.Email}\n" +
-                                $"📝 Задача: {msg.Text}\n\n" +
                                 $"📱 Telegram:\n" +
                                 $"Username: {usernameText}\n" +
                                 $"ID: {telegramId}\n" +
-                                $"Профиль: {profileLink}\n\n" +
-                                $"🧾 Telegram имя: {firstName} {lastName}",
-                                parseMode: Telegram.Bot.Types.Enums.ParseMode.Html
+                                $"👤 Профиль: {profileLink}\n\n" +
+                                $"👤 Клиент: {firstName} {lastName}",
+                                parseMode: ParseMode.Html
                             );
 
                             await bot.SendMessage(chatId, "✅ Заявка отправлена! Спасибо!");
