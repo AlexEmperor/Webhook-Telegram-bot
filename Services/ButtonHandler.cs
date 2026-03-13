@@ -8,8 +8,8 @@ namespace DevelopmentLaboratoryBotWebhook
         public static InlineKeyboardMarkup MainMenuKeyboard() =>
             new InlineKeyboardMarkup(new[]
             {
-        new[] { InlineKeyboardButton.WithCallbackData("🧪 Проекты", "projects") },
-        new[] { InlineKeyboardButton.WithCallbackData("⚙️ Услуги", "services") },
+        new[] { InlineKeyboardButton.WithCallbackData("⚙️ Каталог устройств", "devices") },
+        new[] { InlineKeyboardButton.WithCallbackData("🧪 Услуги", "services") },
         new[] { InlineKeyboardButton.WithCallbackData("📞 Контакты", "contacts") },
         new[] { InlineKeyboardButton.WithCallbackData("💬 Написать специалисту", "write_to_human") },
         new[] { InlineKeyboardButton.WithCallbackData("📝 Оставить заявку", "online_form") },

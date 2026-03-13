@@ -9,12 +9,23 @@ namespace DevelopmentLaboratoryBotWebhook
         // ======= Словари для хранения состояния пользователей (для формы и калькулятора) =======
         private Dictionary<long, string> userStates = [];
         private Dictionary<long, (string Name, string Email, string TaskDescription)> formData = [];
-
+        private readonly Dictionary<string, Func<CallbackQuery, Task>> callbackHandlers;
         private TelegramBotClient bot;
 
         public MessageHandler(TelegramBotClient client)
         {
             bot = client;
+
+            callbackHandlers = new()
+            {
+                ["devices"] = HandleProjects,
+                ["services"] = HandleServices,
+                ["contacts"] = HandleContacts,
+                ["news"] = HandleNews,
+                ["main_menu"] = HandleMainMenu,
+                ["write_to_human"] = HandleWriteToHuman,
+                ["online_form"] = HandleOnlineForm
+            };
         }
 
         // =================== Обработка сообщений ===================
@@ -107,104 +118,162 @@ namespace DevelopmentLaboratoryBotWebhook
             }
         }
 
-        // =================== Обработка колбеков ===================
+        // =================== Callback ===================
+
         public async Task OnUpdate(Update update)
         {
-            if (update is not { CallbackQuery: { } query })
+            if (update.CallbackQuery == null)
             {
                 return;
             }
 
+            var query = update.CallbackQuery;
+
             await bot.AnswerCallbackQuery(query.Id);
 
-            switch (query.Data)
+            if (callbackHandlers.TryGetValue(query.Data!, out var handler))
             {
-                case "main_menu":
-                    await bot.EditMessageText(
-                        chatId: query.Message!.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text: "Чем могу помочь?",
-                        replyMarkup: ButtonHandler.MainMenuKeyboard()
-                    );
-                    break;
-
-                case "projects":
-                    await bot.EditMessageText(
-                        chatId: query.Message!.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text:
-                        "1️⃣ АК «SDR».\nУстройство сканирования частотного спектра с возможностью указания на карте источников различных типов сигналов.\n\n" +
-                        "2️⃣ Аппаратный модуль VVizor.\nУстройство фиксирования видео передатчиков.\n\n" +
-                        "3️⃣ МЭМС.\nУстройство позиционирования.\n\n" +
-                        "4️⃣ Плата ретранслятора с программным обеспечением автоматизированного тестирования выпускаемых изделий.\n\n" +
-                        "5️⃣ Радиосканер.\nДвухканальное устройство сканирования частотного спектра.\n\n" +
-                        "6️⃣ Bluetooth-маяки.\n\n" +
-                        "7️⃣ Радиомаяки.\n\n",
-
-                        replyMarkup: ButtonHandler.ReturnKeyboard()
-                    );
-                    break;
-
-                case "services":
-                    await bot.EditMessageText(
-                        chatId: query.Message!.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text:
-                        "⚙️ Услуги:\n\n" +
-                        "• Разработка ПО под заказ\n\n" +
-                        "• Создание прототипов устройств\n\n" +
-                        "• Интеграция оборудования\n\n" +
-                        "• Консультационные услуги\n\n" +
-                        "• Поставка готовых изделий\n\n" +
-                        "• Гарантийное обслуживание\n\n" +
-                        "• Сопровождение проектов",
-                        replyMarkup: ButtonHandler.ReturnKeyboard()
-                    );
-                    break;
-
-                case "write_to_human":
-                    await bot.EditMessageText(
-                        chatId: query.Message!.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text: "💬 Переход к специалисту: https://t.me/YgorGrupStar",
-                        replyMarkup: ButtonHandler.ReturnKeyboard()
-                    );
-                    break;
-
-                case "online_form":
-                    userStates[query.Message!.Chat.Id] = "form_name";
-                    await bot.EditMessageText(
-                        chatId: query.Message.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text: "Введите ваше имя:",
-                        replyMarkup: ButtonHandler.ReturnKeyboard()
-                    );
-                    break;
-
-                case "news":
-                    await bot.EditMessageText(
-                        chatId: query.Message.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text:
-                        "📰 Новости лаборатории:\n\n" +
-                        "1️⃣ Проведена проверка изделия AK SDR в полевых условиях на полигоне в г. Калуга.\n\n" +
-                        "2️⃣ Отладка устройства VVizor.\n\n" +
-                        "3️⃣ Выпущена очередная партия МЭМС.",
-                        replyMarkup: ButtonHandler.ReturnKeyboard()
-                    );
-                    break;
-
-                case "contacts":
-                    await bot.EditMessageText(
-                        chatId: query.Message!.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text:
-                        "📞 Контакты:\nТелефон: +7 (977) 488-90-30\nE-mail: electriks0comp26@gmail.com\nТелеграм: @YgorGrupStar\nАдрес: 125183, г. Москва, Проспект Черепановых, д. 54\n" +
-                        "Контактное лицо: Тарасов Игорь Анатольевич\nВремя работы: пн-пт: 9:00 - 18:00",
-                        replyMarkup: ButtonHandler.ReturnKeyboard()
-                    );
-                    break;
+                await handler(query);
             }
         }
+
+        // =================== Методы ===================
+
+        private async Task HandleMainMenu(CallbackQuery query)
+        {
+            await bot.EditMessageText(
+                chatId: query.Message!.Chat.Id,
+                messageId: query.Message.MessageId,
+                text: "Чем могу помочь?",
+                replyMarkup: ButtonHandler.MainMenuKeyboard()
+            );
+        }
+
+        private async Task HandleProjects(CallbackQuery query)
+        {
+            await bot.EditMessageText(
+                chatId: query.Message!.Chat.Id,
+                messageId: query.Message.MessageId,
+                text:
+                "🧪 Наши устройства:\n\n" +
+
+                "1️⃣ АК «SDR»\n" +
+                "Устройство сканирования частотного спектра с возможностью указания на карте источников сигналов.\n\n" +
+
+                "2️⃣ Аппаратный модуль VVizor\n" +
+                "Устройство фиксирования видео передатчиков.\n\n" +
+
+                "3️⃣ МЭМС\n" +
+                "Устройство позиционирования.\n\n" +
+
+                "4️⃣ Плата ретранслятора\n" +
+                "Система автоматизированного тестирования выпускаемых изделий.\n\n" +
+
+                "5️⃣ Радиосканер\n" +
+                "Двухканальное устройство сканирования частотного спектра.\n\n" +
+
+                "6️⃣ Bluetooth-маяки\n\n" +
+                "7️⃣ Радиомаяки",
+
+                replyMarkup: ButtonHandler.ReturnKeyboard()
+            );
+        }
+
+        private async Task HandleServices(CallbackQuery query)
+        {
+            await bot.EditMessageText(
+                chatId: query.Message!.Chat.Id,
+                messageId: query.Message.MessageId,
+                text:
+                "⚙️ Услуги:\n\n" +
+
+                "• Разработка ПО под заказ\n\n" +
+                "• Создание прототипов устройств\n\n" +
+                "• Интеграция оборудования\n\n" +
+                "• Консультационные услуги\n\n" +
+                "• Поставка готовых изделий\n\n" +
+                "• Гарантийное обслуживание\n\n" +
+                "• Сопровождение проектов",
+
+                replyMarkup: ButtonHandler.ReturnKeyboard()
+            );
+        }
+
+        private async Task HandleNews(CallbackQuery query)
+        {
+            await bot.EditMessageText(
+                chatId: query.Message!.Chat.Id,
+                messageId: query.Message.MessageId,
+                text:
+                "📰 Новости лаборатории:\n\n" +
+
+                "1️⃣ Проведена проверка изделия AK SDR в полевых условиях на полигоне в г. Калуга.\n\n" +
+
+                "2️⃣ Завершена отладка устройства VVizor.\n\n" +
+
+                "3️⃣ Выпущена новая партия модулей МЭМС.",
+
+                replyMarkup: ButtonHandler.ReturnKeyboard()
+            );
+        }
+
+        private async Task HandleContacts(CallbackQuery query)
+        {
+            var chatId = query.Message!.Chat.Id;
+
+            await bot.EditMessageText(
+                chatId: chatId,
+                messageId: query.Message.MessageId,
+                text:
+                "📞 Контакты:\n\n" +
+
+                "Телефон: +7 (977) 488-90-30\n" +
+                "E-mail: electriks0comp26@gmail.com\n" +
+                "Telegram: @YgorGrupStar\n\n" +
+
+                "📍 Адрес:\n" +
+                "125183, г. Москва\n" +
+                "Проспект Черепановых, д. 54\n\n" +
+
+                "Контактное лицо:\n" +
+                "Тарасов Игорь Анатольевич\n\n" +
+
+                "Время работы:\n" +
+                "Пн-Пт: 9:00 – 18:00",
+
+                replyMarkup: ButtonHandler.ReturnKeyboard()
+            );
+
+            // отправка карты
+
+            await bot.SendLocation(
+                chatId,
+                55.843475,
+                37.537694
+            );
+        }
+
+        private async Task HandleWriteToHuman(CallbackQuery query)
+        {
+            await bot.EditMessageText(
+                chatId: query.Message!.Chat.Id,
+                messageId: query.Message.MessageId,
+                text: "💬 Переход к специалисту:\nhttps://t.me/YgorGrupStar",
+                replyMarkup: ButtonHandler.ReturnKeyboard()
+            );
+        }
+
+        private async Task HandleOnlineForm(CallbackQuery query)
+        {
+            userStates[query.Message!.Chat.Id] = "form_name";
+
+            await bot.EditMessageText(
+                chatId: query.Message.Chat.Id,
+                messageId: query.Message.MessageId,
+                text: "Введите ваше имя:",
+                replyMarkup: ButtonHandler.ReturnKeyboard()
+            );
+        }
+
     }
 }
