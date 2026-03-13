@@ -3,14 +3,6 @@
   "WorkspaceRootPath": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\controllers\\telegramcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:controllers\\telegramcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\services\\buttonhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:services\\buttonhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\services\\messagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:services\\messagehandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,12 +11,12 @@
       "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\controllers\\telegramcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:controllers\\telegramcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|c:\\git\\developmentlaboratorybotwebhook\\services\\buttonhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8CB8D669-C6BB-46EB-A041-1CE7A4556689}|DevelopmentLaboratoryBotWebhook.csproj|solutionrelative:services\\buttonhandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 15,
+          "SelectedChildIndex": 10,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,10 +58,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
@@ -77,78 +65,57 @@
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-18T15:35:48.039Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
-              "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Properties\\launchSettings.json",
-              "RelativeToolTip": "Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-02-18T15:35:46.649Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "MessageHandler.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\MessageHandler.cs",
               "RelativeDocumentMoniker": "Services\\MessageHandler.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\MessageHandler.cs",
               "RelativeToolTip": "Services\\MessageHandler.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAowO4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAKMAAAAAAAAAAAAAANMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T15:33:04.056Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "ButtonHandler.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\ButtonHandler.cs",
               "RelativeDocumentMoniker": "Services\\ButtonHandler.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\ButtonHandler.cs",
               "RelativeToolTip": "Services\\ButtonHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T15:33:03.443Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T15:30:33.462Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "TelegramController.cs",
               "DocumentMoniker": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Controllers\\TelegramController.cs",
               "RelativeDocumentMoniker": "Controllers\\TelegramController.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Controllers\\TelegramController.cs",
               "RelativeToolTip": "Controllers\\TelegramController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T15:28:53.826Z",
               "EditorCaption": ""

@@ -9,7 +9,6 @@ namespace DevelopmentLaboratoryBotWebhook
         // ======= Словари для хранения состояния пользователей (для формы и калькулятора) =======
         private Dictionary<long, string> userStates = [];
         private Dictionary<long, (string Name, string Email, string TaskDescription)> formData = [];
-        //private Dictionary<long, (string Type, string Complexity, string Duration)> calcData = [];
 
         private TelegramBotClient bot;
 
@@ -97,53 +96,6 @@ namespace DevelopmentLaboratoryBotWebhook
                 }
                 return;
             }
-
-            // ======== Калькулятор проекта ========
-            /*if (userStates.ContainsKey(chatId) && userStates[chatId].StartsWith("calc_"))
-            {
-                switch (userStates[chatId])
-                {
-                    case "calc_type":
-                        calcData[chatId] = (msg.Text, "", "");
-                        userStates[chatId] = "calc_complexity";
-                        await bot.SendMessage(chatId, "Введите сложность проекта (низкая/средняя/высокая):");
-                        break;
-                    case "calc_complexity":
-                        var oldCalc = calcData[chatId];
-                        calcData[chatId] = (oldCalc.Type, msg.Text, "");
-                        userStates[chatId] = "calc_duration";
-                        await bot.SendMessage(chatId, "Введите предполагаемую продолжительность (в неделях):");
-                        break;
-                    case "calc_duration":
-                        var calc = calcData[chatId];
-                        calcData[chatId] = (calc.Type, calc.Complexity, msg.Text);
-
-                        // Простейшая оценка (для примера)
-                        var estCost = calc.Complexity.ToLower() switch
-                        {
-                            "низкая" => 50000,
-                            "средняя" => 120000,
-                            "высокая" => 250000,
-                            _ => 100000
-                        };
-
-                        await bot.SendMessage(chatId,
-                            $"📊 Оценка проекта:\nТип: {calc.Type}\nСложность: {calc.Complexity}\n" +
-                            $"Сроки: {calc.Duration} недель\nПримерная стоимость: {estCost} руб.");
-
-                        await bot.SendMessage(chatId,
-                            "Вернуться в меню:",
-                            replyMarkup: ReturnKeyboard()
-                        );
-
-                        userStates.Remove(chatId);
-                        calcData.Remove(chatId);
-                        break;
-                }
-                return;
-            }
-            */
-
             // ======== Стартовое сообщение ========
             if (msg.Text.StartsWith("/start"))
             {
@@ -210,17 +162,6 @@ namespace DevelopmentLaboratoryBotWebhook
                     );
                     break;
 
-                case "contacts":
-                    await bot.EditMessageText(
-                        chatId: query.Message!.Chat.Id,
-                        messageId: query.Message.MessageId,
-                        text:
-                        "📞 Контакты:\nТелефон: +7 (977) 488-90-30\nE-mail: electriks0comp26@gmail.com\nТелеграм: @YgorGrupStar\nАдрес: 125183, г. Москва, Проспект Черепановых, д. 54\n" +
-                        "Контактное лицо: Тарасов Игорь Анатольевич\nВремя работы: пн-пт: 9:00 - 18:00",
-                        replyMarkup: ButtonHandler.ReturnKeyboard()
-                    );
-                    break;
-
                 case "write_to_human":
                     await bot.EditMessageText(
                         chatId: query.Message!.Chat.Id,
@@ -253,15 +194,16 @@ namespace DevelopmentLaboratoryBotWebhook
                     );
                     break;
 
-                    /*case "project_calc":
-                        userStates[query.Message!.Chat.Id] = "calc_type";
-                        await bot.EditMessageText(
-                            chatId: query.Message.Chat.Id,
-                            messageId: query.Message.MessageId,
-                            text: "Введите тип устройства для оценки:",
-                            replyMarkup: ReturnKeyboard()
-                        );
-                        break;*/
+                case "contacts":
+                    await bot.EditMessageText(
+                        chatId: query.Message!.Chat.Id,
+                        messageId: query.Message.MessageId,
+                        text:
+                        "📞 Контакты:\nТелефон: +7 (977) 488-90-30\nE-mail: electriks0comp26@gmail.com\nТелеграм: @YgorGrupStar\nАдрес: 125183, г. Москва, Проспект Черепановых, д. 54\n" +
+                        "Контактное лицо: Тарасов Игорь Анатольевич\nВремя работы: пн-пт: 9:00 - 18:00",
+                        replyMarkup: ButtonHandler.ReturnKeyboard()
+                    );
+                    break;
             }
         }
     }

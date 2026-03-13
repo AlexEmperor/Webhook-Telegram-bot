@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DevelopmentLaboratoryBotWebhook")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+33e49baaceb8187bf6fa7b7e389f10c849583d37")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+45a50fccd3385c4ff05218323822e9524d39a95e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DevelopmentLaboratoryBotWebhook")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DevelopmentLaboratoryBotWebhook")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

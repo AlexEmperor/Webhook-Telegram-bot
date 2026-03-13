@@ -26,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 9,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,10 +58,6 @@
             },
             {
               "$type": "Bookmark",
-              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
-            },
-            {
-              "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
@@ -76,7 +72,7 @@
               "RelativeDocumentMoniker": "Services\\MessageHandler.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\MessageHandler.cs",
               "RelativeToolTip": "Services\\MessageHandler.cs",
-              "ViewState": "AgIAAKoAAAAAAAAAAAAowLsAAABkAAAAAAAAAA==",
+              "ViewState": "AgIAAJ4AAAAAAAAAAAAgwK4AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T15:33:04.056Z",
               "EditorCaption": ""
@@ -89,9 +85,10 @@
               "RelativeDocumentMoniker": "Services\\ButtonHandler.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Services\\ButtonHandler.cs",
               "RelativeToolTip": "Services\\ButtonHandler.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwBkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T15:33:03.443Z"
+              "WhenOpened": "2026-02-18T15:33:03.443Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -101,9 +98,10 @@
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-18T15:30:33.462Z"
+              "WhenOpened": "2026-02-18T15:30:33.462Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -113,7 +111,7 @@
               "RelativeDocumentMoniker": "Controllers\\TelegramController.cs",
               "ToolTip": "C:\\Git\\DevelopmentLaboratoryBotWebhook\\Controllers\\TelegramController.cs",
               "RelativeToolTip": "Controllers\\TelegramController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwBgAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T15:28:53.826Z",
               "EditorCaption": ""
