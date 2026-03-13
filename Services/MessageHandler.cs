@@ -11,6 +11,7 @@ namespace DevelopmentLaboratoryBotWebhook
         private Dictionary<long, (string Name, string Email, string TaskDescription)> formData = [];
         private readonly Dictionary<string, Func<CallbackQuery, Task>> callbackHandlers;
         private TelegramBotClient bot;
+        private HashSet<long> locationSent = [];
 
         public MessageHandler(TelegramBotClient client)
         {
@@ -37,7 +38,8 @@ namespace DevelopmentLaboratoryBotWebhook
             }
 
             var chatId = msg.Chat.Id;
-
+            // Любое другое сообщение — сбрасываем флаг геолокации
+            locationSent.Remove(chatId);
             // ======== Онлайн-заявка ========
             if (userStates.ContainsKey(chatId) && userStates[chatId].StartsWith("form_"))
             {
@@ -246,11 +248,11 @@ namespace DevelopmentLaboratoryBotWebhook
 
             // отправка карты
 
-            await bot.SendLocation(
-                chatId,
-                55.843475,
-                37.537694
-            );
+            if (!locationSent.Contains(chatId))
+            {
+                await bot.SendLocation(chatId, 55.843475, 37.537694);
+                locationSent.Add(chatId);
+            }
         }
 
         private async Task HandleWriteToHuman(CallbackQuery query)
